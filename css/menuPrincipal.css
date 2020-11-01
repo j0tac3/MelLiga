@@ -1,0 +1,16 @@
+.menu-equipos{
+    margin: 2rem auto;
+    width: 80%;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.menu-equipos::-webkit-scrollbar{
+    display: none;
+}
+.icono-menu-equipo{
+    margin: 0 0.5rem;
+    width: 5rem;
+    height: 5rem;
+}
