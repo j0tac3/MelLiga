@@ -1,0 +1,50 @@
+.tarjetas-jugador{
+    margin: 10px auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+.container-jugador{
+    margin: 10px;
+    /* -webkit-perspective: 800;
+    perspective: 800; */
+}
+.jugador{
+    width: 300px;
+    height: 350px;
+    background: #F29720;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: .7s ease;
+    box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.65);
+    border-radius: 10px;
+}
+.adelante, .atras{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+.atras{
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: #fff;
+    font-family: "open sans";
+}
+.container-jugador:hover .jugador{
+    transform: rotateY(180deg);
+    padding: 15px;
+}
+.imagen-jugador{
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    border-radius: 10px;
+}

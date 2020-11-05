@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/cabecera.css">
     <link rel="stylesheet" href="css/menuPrincipal.css">
+    <link rel="stylesheet" href="css/jugador.css">
 </head>
 <body>
     <div class="cabecera">
@@ -17,7 +18,50 @@
         </form>
     </div>
     <div class="menu-equipos" id="menu-equipos"></div>
+    <div class="select-equipos">
+        <select name="select_Equipos" id="selectEquipos">
+            <option value=""></option>
+        </select>
+    </div>
 
+    <div class="tarjetas-jugador">
+        <div class="container-jugador">
+            <div class="jugador">
+                <div class="adelante">
+                    <img src="media/jugadores/williams.jpg" alt="" class="imagen-jugador">
+                </div>
+                <div class="atras">
+                    <label for="nombre" class="lbl-jugador">Iñaki Williams</label>
+                    <label for="nacionalidad" class="lbl-jugador">Nacionalidad: Español </label>
+                    <label for="altura" class="lbl-jugador">Altura: 1.86m</label>
+                    <label for="edad" class="lbl-jugador">Edad: 26 años</label>
+                    <table class="tabla-edicion">
+                        <tr><th>#</th><th>Edicion</th><th>Seccion</th></tr>
+                        <tr><td>1a</td><td>17</td><td>Base</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container-jugador">
+            <div class="jugador">
+                <div class="adelante">
+                    <img src="media/jugadores/muniain.jpg" alt="" class="imagen-jugador">
+                </div>
+                <div class="atras">
+                    <label for="nombre" class="lbl-jugador">Iñaki Williams</label>
+                    <label for="nacionalidad" class="lbl-jugador">Nacionalidad: Español </label>
+                    <span>
+                        <label for="altura" class="lbl-jugador">Altura: 1.86m</label>
+                        <label for="edad" class="lbl-jugador">Edad: 26 años</label>
+                    </span>
+                    <table class="tabla-edicion">
+                        <tr><th>#</th><th>Edicion</th><th>Seccion</th></tr>
+                        <tr><td>1a</td><td>17</td><td>Base</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/main.js"></script>

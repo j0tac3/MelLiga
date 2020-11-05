@@ -12,6 +12,7 @@ let equipos = new Array
 let equipo = new Equipo;
 
 const menuEquipos = document.getElementById('menu-equipos');
+const selectEquipos = document.getElementById('selectEquipos');
 
 const getAllEquipos = async () => {
     return new Promise((resolve, reject) => {
@@ -34,9 +35,20 @@ const rellenarMenuEquipos = (equipos) => {
     }
     menuEquipos.appendChild(fragment);
 }
+const rellenarSelectEquipos = (equipos) => {
+    let fragmento = document.createDocumentFragment();
+    for (const equipo of equipos){
+        let option = document.createElement('OPTION');
+        option.value = equipo.id;
+        option.textContent = equipo.nombre;
+        fragmento.appendChild(option);
+    }
+    selectEquipos.appendChild(fragmento);
+}
 const cargarEquipos = async () => {
     equipos = await getAllEquipos();
     rellenarMenuEquipos(equipos);
+    rellenarSelectEquipos(equipos);
     return 'Todos los equipos han sido agregados.';
 }
 
