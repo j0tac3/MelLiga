@@ -12,12 +12,13 @@
 .jugador{
     width: 300px;
     height: 350px;
-    background: #F29720;
+    background: #ff0000;
     position: relative;
     transform-style: preserve-3d;
     transition: .7s ease;
     box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.65);
     border-radius: 10px;
+    opacity: 0.9.;
 }
 .adelante, .atras{
     width: 100%;
