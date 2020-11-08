@@ -11,7 +11,6 @@
 .jugador{
     width: 200px;
     height: 250px;
-    background: #ff0000;
     position: relative;
     transform-style: preserve-3d;
     transition: .7s ease;
@@ -49,17 +48,24 @@
 .nombre-jugador{
     margin: 0 auto;
     top: 80%;
-    width: 8rem;
+    width: 10rem;
     font-size: 18px;
     position: relative;
     text-align: center;
-    background: #fff;
-    color: #f00;
     border-radius: 3px;
+    background: #fff;
 }
 .escudo-jugador{
     position: absolute;
     width: 2rem;
     top: 10px;
     left: 10px;
+}
+.nombre__jugador--deportivoalaves{
+    color: rgb(4, 0, 255);
+    background: rgb(4, 0, 255);
+}
+.nombre__jugador--athleticclub{
+    color: #f00;
+    background: #ff0000;
 }
