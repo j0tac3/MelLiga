@@ -1,5 +1,6 @@
 .menu-equipos{
-    margin: 2rem auto;
+    margin: 5px auto;
+    padding-top: 15px;
     width: 80%;
     align-items: center;
     overflow-x: auto;
