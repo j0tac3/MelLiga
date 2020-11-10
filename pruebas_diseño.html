@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MelLiga</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cabecera.css">
+    <link rel="stylesheet" href="css/menuPrincipal.css">
+    <link rel="stylesheet" href="css/pruebas_diseño.css">
+</head>
+<body>
+    <div class="cabecera" style="background-color: #395E66;">
+        <h2 class="titulo">MelLiga</h2>
+        <form class="inputs-container">
+            <input type="text" name="busqueda" class="input-busqueda" placeholder="Jugador...">
+        </form>
+    </div>
+    <div style="background-color: #070C0D;">
+        <div class="menu-equipos" id="menu-equipos"></div>
+        <div class="select-equipos">
+            <select name="select_Equipos" id="selectEquipos">
+                <option value=""></option>
+            </select>
+        </div>
+        <div style="min-height: 70vh;">
+            <div class="contenedor-tarjeta">
+                <div class="jugador-card">
+                    <div class="img-card">
+                        <img src="media/jugadores_perfil/williams.png" alt="" class="img-card-jugador">
+                    </div>
+                    <div class="cuerpo-card">
+                        <div>
+                        <p>Iñaki Williams</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor-tarjeta">
+                <div class="jugador-card">
+                    <div class="img-card">
+                        <img src="media/jugadores_perfil/muniain.png" alt="" class="img-card-jugador">
+                    </div>
+                    <div class="cuerpo-card">
+                        <p>Muniain</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor-tarjeta">
+                <div class="jugador-card">
+                    <div class="img-card">
+                        <img src="media/jugadores_perfil/aduriz.png" alt="" class="img-card-jugador">
+                    </div>
+                    <div class="cuerpo-card">
+                        <p>Aritz Aduriz</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
