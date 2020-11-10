@@ -1,55 +1,46 @@
 
-body{
-    margin: 0 auto;
-    background-color: #070C0D;
-    background-image: url(../media/campo2.jpg);
+.content{
+    background-image: url(../media/campo.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
-}
-.jugador-card{
-    width: 100%;
-    height: 100px;
-    margin: 1rem auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 0 0 20px -5px rgba(255, 255, 255, 0.50);
-    border-radius: 5px;
-    background-color: #212525;
-    color: #fff;
-    transition: all 0.30s ease-out;
-}
-.img-card{
+    background-size: contain;
     margin: 0 auto;
-    width: 30%;
+    width: 100%;
+}
+.jugadores{
+    padding-top: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+}
+.contenedor-tarjeta{
+    margin: 0 1rem
 }
 .img-card-jugador{
-    height: 90px;
-    width: 90px;
+    width: 4rem;
+    height: 4rem;
     padding: 2px;
     border-radius: 50%;
     background-color: #fff;
     box-shadow: 0px 0px 20px 0px rgb(255,255,255);
+    transition: all 0.2s ease-out;
 }
-.cuerpo-card{
-    width: 70%;
-    height: 100%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-.contenedor-tarjeta{
-    background-color: #fff;
-    width: 90%;
-    border-radius: 5px;
-    margin: 0 auto;
-}
-.jugador-card:hover{
+.img-card-jugador:hover{
     transform: translate3d(3px, -3px, 0);
     box-shadow: -5px 3px 13px 5px rgb(255,255,255);
-    background-color: #070C0D;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 300px) and (max-width:768px){
+   
+}
+@media screen and (min-width: 768px) and (max-width:1024px){
+    .content{
+        width: 70%;
+    }
+}
+@media screen and (min-width: 768) and (orientation: landscape){
+    .container{
+        background-image: url('..media/campo_table.jpg');
+    }
 }

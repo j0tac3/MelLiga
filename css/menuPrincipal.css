@@ -1,6 +1,6 @@
 .menu-equipos{
-    margin: 5px auto;
-    padding-top: 15px;
+    margin: 0 auto;
+    padding-top: 10px;
     width: 80%;
     align-items: center;
     overflow-x: auto;
@@ -10,12 +10,16 @@
 .menu-equipos::-webkit-scrollbar{
     display: none;
 }
+.menu-equipos:hover{
+    cursor: pointer;
+}
 .icono-menu-equipo{
     margin: 0 0.5rem;
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
 }
 .select-equipos{
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;

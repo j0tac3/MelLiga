@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/cabecera.css">
     <link rel="stylesheet" href="css/menuPrincipal.css">
     <link rel="stylesheet" href="css/pruebas_diseño.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
     <div class="cabecera" style="background-color: #395E66;">
@@ -16,49 +17,34 @@
             <input type="text" name="busqueda" class="input-busqueda" placeholder="Jugador...">
         </form>
     </div>
-    <div>
-        <div class="menu-equipos" id="menu-equipos"></div>
-        <div class="select-equipos">
-            <select name="select_Equipos" id="selectEquipos">
-                <option value=""></option>
-            </select>
-        </div>
-        <div style="min-height: 70vh;">
+    <div class="menu-equipos" id="menu-equipos"></div>
+    <div class="select-equipos">
+        <select name="select_Equipos" id="selectEquipos">
+            <option value=""></option>
+        </select>
+    </div>
+    <div class="content" style="min-height: 80vh;">
+        <div class="jugadores" id="jugadores-campo">
+            <div class="contenedor-tarjeta">
+                <img src="media/jugadores_perfil/williams.png" alt="" class="img-card-jugador">
+            </div>
             <div class="contenedor-tarjeta">
                 <div class="jugador-card">
-                    <div class="img-card">
-                        <img src="media/jugadores_perfil/williams.png" alt="" class="img-card-jugador">
-                    </div>
-                    <div class="cuerpo-card">
-                        <div>
-                        <p>Iñaki Williams</p>
-                    </div>
-                    </div>
+                    <img src="media/jugadores_perfil/muniain.png" alt="" class="img-card-jugador">
                 </div>
             </div>
             <div class="contenedor-tarjeta">
                 <div class="jugador-card">
-                    <div class="img-card">
-                        <img src="media/jugadores_perfil/muniain.png" alt="" class="img-card-jugador">
-                    </div>
-                    <div class="cuerpo-card">
-                        <p>Muniain</p>
-                    </div>
-                </div>
-            </div>
-            <div class="contenedor-tarjeta">
-                <div class="jugador-card">
-                    <div class="img-card">
-                        <img src="media/jugadores_perfil/aduriz.png" alt="" class="img-card-jugador">
-                    </div>
-                    <div class="cuerpo-card">
-                        <p>Aritz Aduriz</p>
-                    </div>
+                    <img src="media/jugadores_perfil/aduriz.png" alt="" class="img-card-jugador">
                 </div>
             </div>
         </div>
     </div>
+    <footer class="footer">
+        &#xa9; MelApps
+    </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/jugadores.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

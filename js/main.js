@@ -35,7 +35,7 @@ const rellenarMenuEquipos = (equipos) => {
     for (const equipo of equipos){
         let escudo = document.createElement('IMG');
         let nombreEquipoNormalizado = getNombreEquipoNormalizado(equipo.id);
-        escudo.src = `media/${nombreEquipoNormalizado}.png`;
+        escudo.src = `media/equipos/${nombreEquipoNormalizado}.png`;
         escudo.alt = equipo.nombre;
         escudo.classList.add('icono-menu-equipo');
         fragment.appendChild(escudo);
