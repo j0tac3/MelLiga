@@ -1,4 +1,11 @@
 
+body{
+    margin: 0 auto;
+    background-color: #070C0D;
+    background-image: url(../media/campo2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .jugador-card{
     width: 100%;
     height: 100px;
