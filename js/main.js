@@ -6,12 +6,27 @@ class Equipo{
         this.estadio = equipo.estadio;
         this.fundacion = equipo.fundacion;
         this.presidente = equipo.presidente;
+        this.jugadores = [];
+    }
+    insertarJugador(jugador){
+        this.jugadores.push(jugador);
+    }
+    insertarJugadores(jugadores){
+        jugadores.forEach(jugador => {
+            this.jugadores.push(jugador);
+        });
+    }
+}
+class Jugador{
+    constructor(jugador){
+        this.nombre = jugador.nombre;
+        this.apellidos = jugador.apellidos;
+        this.equipo_id = jugador.equipo_id;
+        this.nacionalidad = jugador.nacionalidad;
     }
 }
 let equipos;
-let equipo;
 let jugadores;
-let jugador;
 let url = '../media/img-not-found.png';
 
 const menuEquipos = document.getElementById('menu-equipos');
@@ -138,3 +153,14 @@ const cargarJugadores = async () => {
 }
 cargarEquipos().then(res=>console.log(res));
 cargarJugadores().then(res => console.log(res));
+
+rellenarEquipoJugadores = (jugadores, equipo) => {
+    let jugadoresEquipo = [];
+    jugadores.foreach(jugador => {
+        if (equipo.id === jugador.equipo_id){
+            equipo.jugadores.push(jugador);
+            jugadoresEquipo.push(jugador);
+        }
+    })
+    return jugadoresEquipo;
+}

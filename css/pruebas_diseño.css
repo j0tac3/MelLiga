@@ -3,6 +3,8 @@
     background-image: url(../media/campo.jpg);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position-x: center;
+    background-position-y: top;
     margin: 0 auto;
     width: 100%;
     overflow-y: auto;
@@ -40,8 +42,12 @@
         width: 70%;
     }
 }
-@media screen and (min-width: 768) and (orientation: landscape){
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape){
     .container{
-        background-image: url('..media/campo_table.jpg');
+        /* transform: rotate(90deg); */
+        color: blue;
     }
 }
