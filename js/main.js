@@ -25,8 +25,8 @@ class Jugador{
         this.nacionalidad = jugador.nacionalidad;
     }
 }
-let equipos;
-let jugadores;
+let equipos = [];
+let jugadores = [];
 let url = '../media/img-not-found.png';
 
 const menuEquipos = document.getElementById('menu-equipos');
@@ -68,7 +68,10 @@ const rellenarSelectEquipos = (equipos) => {
     selectEquipos.appendChild(fragmento);
 }
 const cargarEquipos = async () => {
-    equipos = await getAllEquipos();
+    let equiposData = await getAllEquipos();
+    for (equipo of equiposData){
+        equipos.push(new Equipo(equipo));
+    }
     rellenarMenuEquipos(equipos);
     rellenarSelectEquipos(equipos);
     return 'Todos los equipos han sido agregados.';
@@ -148,19 +151,27 @@ const obtenerSrcImagen = (e) => {
 }
 const cargarJugadores = async () => {
     jugadores = await getAllJugadores();
-    rellenarPlayersContainer(jugadores);
+    //rellenarPlayersContainer(jugadores);
     return 'Todos los jugadores han sido agregados.';
 }
-cargarEquipos().then(res=>console.log(res));
-cargarJugadores().then(res => console.log(res));
-
 rellenarEquipoJugadores = (jugadores, equipo) => {
     let jugadoresEquipo = [];
-    jugadores.foreach(jugador => {
+    for (let jugador of jugadores) {
         if (equipo.id === jugador.equipo_id){
             equipo.jugadores.push(jugador);
             jugadoresEquipo.push(jugador);
         }
-    })
+    }
     return jugadoresEquipo;
 }
+const cargarEquiposJugadores = async () => {
+    for (let equipo of equipos) {
+        rellenarEquipoJugadores(jugadores, equipo);
+    }
+}
+const cargaInicial = () => {
+    cargarEquipos().then(res=>console.log(res));
+    cargarJugadores().then(res => cargarEquiposJugadores());
+}
+
+cargaInicial();
