@@ -1,4 +1,4 @@
-const getAllJugadoresCampo = async () => {
+/* const getAllJugadoresCampo = async () => {
     return new Promise((resolve, reject) => {
         axios({
             method : 'GET',
@@ -33,4 +33,4 @@ const cargarJugadoresCampo = async () => {
     let jugadoresCampo = await getAllJugadoresCampo();
     rellenarJugadoresCampo(jugadoresCampo);
 }
-cargarJugadoresCampo().then(res=>console.log('Jugadores cargados'));
+cargarJugadoresCampo().then(res=>console.log('Jugadores cargados')); */

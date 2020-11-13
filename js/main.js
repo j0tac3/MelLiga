@@ -33,6 +33,7 @@ const menuEquipos = document.getElementById('menu-equipos');
 const selectEquipos = document.getElementById('selectEquipos');
 const playersContainer = document.getElementById('tarjetas-jugador');
 const tarjetaJugador = document.getElementById('tarjeta-jugador');
+const jugadoresCampo = document.getElementById('jugadores-campo');
 
 /**************************** Equipos **************************/
 const getAllEquipos = async () => {
@@ -168,10 +169,65 @@ const cargarEquiposJugadores = async () => {
     for (let equipo of equipos) {
         rellenarEquipoJugadores(jugadores, equipo);
     }
+    rellenarJugadoresCampo(equipos[0].jugadores);
 }
-const cargaInicial = () => {
+const rellenarJugadoresCampo = (jugadoresToAdd) => {
+    let fragment = document.createDocumentFragment();
+    for (let jugador of jugadoresToAdd){
+        let contenedorTarjeta = document.createElement('DIV');
+        contenedorTarjeta.classList.add('contenedor-tarjeta');
+        let jugadorCard = document.createElement('DIV');
+        jugadorCard.classList.add('jugador-card');
+        let imgCard = document.createElement('IMG');
+        imgCard.classList.add('img-card-jugador');
+        imgCard.src = `../media/jugador_perfil/${jugador.nombre}.png`;
+        imgCard.onerror = obtenerSrcImagenCampo;
+        let nombreJugador = document.createElement('SPAN');
+        nombreJugador.textContent = `${jugador.nombre}`;
+        nombreJugador.classList.add('nombre-jugador');
+        jugadorCard.appendChild(imgCard);
+        jugadorCard.appendChild(nombreJugador);
+        contenedorTarjeta.appendChild(jugadorCard);
+        fragment.appendChild(contenedorTarjeta);
+    }
+    jugadoresCampo.appendChild(fragment);
+}
+const obtenerSrcImagenCampo = (e) => {
+    e.target.src = '../media/img-not-found.png';
+}
+const cargaInicial = async () => {
     cargarEquipos().then(res=>console.log(res));
-    cargarJugadores().then(res => cargarEquiposJugadores());
+    cargarJugadores().then(res => cargarEquiposJugadores())
+}
+const prepararAlineacion = (e) => {
+    console.log(e.target);
+    let nombreEquipo = e.target.alt;
+    for (let equipo of equipos){
+        if (equipo.nombre === nombreEquipo){
+            let nodos = jugadoresCampo.childNodes.length;
+            for (let i = 0; i < nodos; i++){
+                jugadoresCampo.removeChild(jugadoresCampo.firstChild);
+            }
+            rellenarJugadoresCampo(equipo.jugadores);
+            break;
+        }
+    }
+}
+const prepararAlineacionSelect = (e) => {
+    console.log(e.target);
+    let idEquipo = e.target.value;
+    for (let equipo of equipos){
+        if (equipo.id == idEquipo){
+            let nodos = jugadoresCampo.childNodes.length;
+            for (let i = 0; i < nodos; i++){
+                jugadoresCampo.removeChild(jugadoresCampo.firstChild);
+            }
+            rellenarJugadoresCampo(equipo.jugadores);
+            break;
+        }
+    }
 }
 
 cargaInicial();
+menuEquipos.addEventListener("click", prepararAlineacion);
+selectEquipos.addEventListener("change", prepararAlineacionSelect);

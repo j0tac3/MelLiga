@@ -17,7 +17,16 @@
     flex-wrap: wrap;
 }
 .contenedor-tarjeta{
-    margin: 0 1rem
+    margin: 0 0.5rem
+}
+.jugador-card{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.nombre-jugador{
+    position: absolute;
+    color: red;
 }
 .img-card-jugador{
     width: 4rem;
@@ -34,20 +43,18 @@
     cursor: pointer;
 }
 
+
 @media screen and (min-width: 300px) and (max-width:768px){
    
 }
 @media screen and (min-width: 768px) and (max-width:1024px){
     .content{
-        width: 70%;
+        width: 80%;
     }
 }
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape){
+@media (max-width : 1024px) and (orientation : landscape){
     .container{
-        /* transform: rotate(90deg); */
-        color: blue;
+        width: 45%;
+        transform: rotate(-90deg);
     }
 }
