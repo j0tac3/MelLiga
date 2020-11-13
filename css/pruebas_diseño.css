@@ -26,7 +26,9 @@
 }
 .nombre-jugador{
     position: absolute;
-    color: red;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0 5px;
 }
 .img-card-jugador{
     width: 4rem;
