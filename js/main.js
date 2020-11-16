@@ -40,6 +40,7 @@ const getAllEquipos = async () => {
     return new Promise((resolve, reject) => {
         axios({
             method: 'GET',
+            //url: 'https://immense-mountain-28279.herokuapp.com/api/equipos',
             url: 'http://127.0.0.1:8000/api/equipos',
         }).then(res=> {
             resolve(res.data);
@@ -101,7 +102,8 @@ const getAllJugadores = async () => {
     return new Promise((resolve, reject) => {
         axios({
             method : 'GET',
-            url : 'http://127.0.0.1:8000/api/jugadores'
+            //url : 'https://immense-mountain-28279.herokuapp.com/api/jugadores'
+            url: 'http://127.0.0.1:8000/api/jugadores',
         }).then(res => {
             resolve(res.data);
         }).catch(error => console.log(error));
@@ -169,7 +171,6 @@ const cargarEquiposJugadores = async () => {
     for (let equipo of equipos) {
         rellenarEquipoJugadores(jugadores, equipo);
     }
-    rellenarJugadoresCampo(equipos[0].jugadores);
 }
 const rellenarJugadoresCampo = (jugadoresToAdd) => {
     let fragment = document.createDocumentFragment();
@@ -186,8 +187,8 @@ const rellenarJugadoresCampo = (jugadoresToAdd) => {
         nombreJugador.textContent = `${jugador.nombre}`;
         nombreJugador.classList.add('nombre-jugador');
         jugadorCard.appendChild(imgCard);
-        jugadorCard.appendChild(nombreJugador);
         contenedorTarjeta.appendChild(jugadorCard);
+        contenedorTarjeta.appendChild(nombreJugador);
         fragment.appendChild(contenedorTarjeta);
     }
     jugadoresCampo.appendChild(fragment);
@@ -213,21 +214,6 @@ const prepararAlineacion = (e) => {
         }
     }
 }
-const prepararAlineacionSelect = (e) => {
-    console.log(e.target);
-    let idEquipo = e.target.value;
-    for (let equipo of equipos){
-        if (equipo.id == idEquipo){
-            let nodos = jugadoresCampo.childNodes.length;
-            for (let i = 0; i < nodos; i++){
-                jugadoresCampo.removeChild(jugadoresCampo.firstChild);
-            }
-            rellenarJugadoresCampo(equipo.jugadores);
-            break;
-        }
-    }
-}
 
 cargaInicial();
 menuEquipos.addEventListener("click", prepararAlineacion);
-selectEquipos.addEventListener("change", prepararAlineacionSelect);

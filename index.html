@@ -7,61 +7,41 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/cabecera.css">
     <link rel="stylesheet" href="css/menuPrincipal.css">
-    <link rel="stylesheet" href="css/jugador.css">
+    <link rel="stylesheet" href="css/pruebas.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-    <div class="cabecera">
+    <div class="cabecera" style="background-color: #395E66;">
         <h2 class="titulo">MelLiga</h2>
         <form class="inputs-container">
             <input type="text" name="busqueda" class="input-busqueda" placeholder="Jugador...">
         </form>
     </div>
-    <div>
-        <div class="menu-equipos" id="menu-equipos"></div>
-        <div class="select-equipos">
-            <select name="select_Equipos" id="selectEquipos">
-                <option value=""></option>
-            </select>
-        </div>
-
-        <div class="jugador-card">
-            <div class="img-card">
-                <img src="media/jugadores/iñaki-williams.jpg" alt="" class="img-card-jugador">
+    <div class="menu-equipos" id="menu-equipos"></div>
+    <div class="select-equipos">
+        <select name="select_Equipos" id="selectEquipos">
+            <option value=""></option>
+        </select>
+    </div>
+    <div class="content" style="min-height: 80vh; max-height: 80vh;">
+        <div class="jugadores" id="jugadores-campo">
+           <!--  <div class="contenedor-tarjeta">
+                <img src="media/jugadores_perfil/williams.png" alt="" class="img-card-jugador">
             </div>
-            <div class="cuerpo-card">
-                <div class="edicion-info">
-                    <p class="jugador-info">#16</p>
-                    <p class="jugador-info">1ª</p>
-                    <p class="jugador-info"> Base</p>
-                </div>
-                <p>Iñaki Williams</p>
-                <p class="jugador-info">Del</p>
+            <div class="contenedor-tarjeta">
+                <img src="media/jugadores_perfil/muniain.png" alt="" class="img-card-jugador">
             </div>
-        </div>
-
-        <div class="tarjetas-jugador" id="tarjetas-jugador">
-            <div class="container-jugador" id="tarjeta-jugador">
-                <div class="jugador">
-                    <div class="adelante">
-                        <img src="media/img-not-found.png" alt="" class="imagen-jugador">
-                        <p class="nombre-jugador">No encontrado</p>
-                        <img src="media/img-not-found.png" alt="" class="escudo-jugador">
-                    </div>
-                    <div class="atras">
-                        <label for="nombre" class="lbl-jugador">Iñaki Williams</label>
-                        <label for="nacionalidad" class="lbl-jugador">Nacionalidad: Español </label>
-                        <label for="altura" class="lbl-jugador">Altura: 1.86m</label>
-                        <label for="edad" class="lbl-jugador">Edad: 26 años</label>
-                        <table class="tabla-edicion">
-                            <tr><th>#</th><th>Edicion</th><th>Seccion</th></tr>
-                            <tr><td>1a</td><td>17</td><td>Base</td></tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
+            <div class="contenedor-tarjeta">
+                <img src="media/jugadores_perfil/aduriz.png" alt="" class="img-card-jugador">
+            </div> -->
         </div>
     </div>
+    <footer class="footer">
+        <p>MelLiga v1.0.0.a1</p>
+        <p>&#xa9; MelApps</p>
+    </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/jugadores.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
