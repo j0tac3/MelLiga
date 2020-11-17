@@ -30,7 +30,6 @@ let jugadores = [];
 let url = '../media/img-not-found.png';
 
 const menuEquipos = document.getElementById('menu-equipos');
-const selectEquipos = document.getElementById('selectEquipos');
 const playersContainer = document.getElementById('tarjetas-jugador');
 const tarjetaJugador = document.getElementById('tarjeta-jugador');
 const jugadoresCampo = document.getElementById('jugadores-campo');
@@ -59,23 +58,13 @@ const rellenarMenuEquipos = (equipos) => {
     }
     menuEquipos.appendChild(fragment);
 }
-const rellenarSelectEquipos = (equipos) => {
-    let fragmento = document.createDocumentFragment();
-    for (const equipo of equipos){
-        let option = document.createElement('OPTION');
-        option.value = equipo.id;
-        option.textContent = equipo.nombre;
-        fragmento.appendChild(option);
-    }
-    selectEquipos.appendChild(fragmento);
-}
 const cargarEquipos = async () => {
     let equiposData = await getAllEquipos();
     for (equipo of equiposData){
         equipos.push(new Equipo(equipo));
     }
     rellenarMenuEquipos(equipos);
-    rellenarSelectEquipos(equipos);
+    //rellenarSelectEquipos(equipos);
     return 'Todos los equipos han sido agregados.';
 }
 const getNombreEquipo = (equipo_id) => {

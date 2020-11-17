@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MelLiga</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cabecera.css">
+    <link rel="stylesheet" href="css/menuPrincipal.css">
+    <link rel="stylesheet" href="css/pruebas.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <div class="cabecera" style="background-color: #395E66;">
+        <h2 class="titulo">MelLiga</h2>
+        <form class="inputs-container">
+            <input type="text" name="busqueda" class="input-busqueda" placeholder="Jugador...">
+        </form>
+    </div>
+    <div class="contenedor-form">
+        <form action="" id="form-jugador">
+            <div class="form-input">
+                <label for="numero">Numero: </label>
+                <input type="text" name="numero" id="">
+            </div>
+            <div class="form-input">
+                <label for="seccion">Seccion: </label>
+                <input type="text" name="seccion" id="">
+            </div>
+            <div class="form-input">
+                <label for="edicion">Edicion: </label>
+                <div style="width: 50%;">
+                    <select name="edicion" id="">
+                        <option value="1">Primera</option>
+                        <option value="2">Segunda</option>
+                        <option value="3">Tercera</option>
+                        <option value="4">cuarta</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-input">
+                <label for="nombre">Nombre: </label>
+                <input type="text" name="nombre" id="">
+            </div>
+            <div class="form-input">
+                <label for="apellidos">Apellidos: </label>
+                <input type="text" name="apellidos" id="">
+            </div>
+            <div class="form-input">
+                <label for="apodo">Apodo: </label>
+                <input type="text" name="apodo" id="">
+            </div>
+            <div class="form-input">
+                <label for="nacimiento">Año nacimiento: </label>
+                <input type="text" name="nacimiento" id="">
+            </div>
+            <div class="form-input">
+                <label for="altura">Altura: </label>
+                <input type="text" name="altura" id="">
+            </div>
+            <div class="form-input">
+                <label for="lugarNacimiento">Lugar de nacimiento: </label>
+                <input type="text" name="lugarNacimiento" id="">
+            </div>
+            <div class="form-input">
+                <label for="equipo">Equipo: </label>
+                <div class="" style="width: 50%;">
+                    <select name="selectEquipos" id="select-equipos">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+        </form>
+        <div class="add" id="nuevo-jugador"></div>
+    </div>
+    <footer class="footer">
+        <p>MelLiga v1.0.0.a1</p>
+        <p>&#xa9; MelApps</p>
+    </footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/agregarJugador.js"></script>
+</body>
+</html>
