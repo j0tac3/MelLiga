@@ -28,16 +28,7 @@
     border: none;
     padding: 0 35px 0 20px;
 }
-.icono-busqueda{
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 30px;
-    height: 30px;
-    border-radius: 0 20px 20px 0;
-    background-image: url(../media/iconos/_lupa.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    padding: 0.2px;
+.button-addJugador{
+    width: 2rem;
+    height: 2rem;
 }
