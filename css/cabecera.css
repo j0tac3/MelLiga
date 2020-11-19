@@ -1,9 +1,12 @@
 .cabecera{
+    /* position: absolute; */
+    width: 100%;
+    /* top: 0; */
+    /* left: 0; */
     display: flex;
-    min-height: 10vh;
     justify-content: space-around;
     align-items: center;
-    background-color: #312F2F;
+    /* background-color: #312F2F; */
     padding: 10px 0 10px 0;
 }
 .titulo{

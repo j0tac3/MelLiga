@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="cabecera" style="background-color: #395E66;">
-        <h2 class="titulo">MelLiga</h2>
+        <h2 class="titulo"><a href="index.html">MelLiga</a></h2>
         <form class="inputs-container">
             <input type="text" name="busqueda" class="input-busqueda" placeholder="Jugador...">
         </form>
@@ -25,7 +25,14 @@
             </div>
             <div class="form-input">
                 <label for="seccion">Seccion: </label>
-                <input type="text" name="seccion" id="">
+                <div style="width: 50%;">
+                    <select name="seccion" id="">
+                        <option value="Base">Base</option>
+                        <option value="Ultimos Fichajes">Ultimos Fichajes</option>
+                        <option value="Serie 10">Serie 10</option>
+                        <option value="Top 10">Top 10</option>
+                    </select>
+                </div>
             </div>
             <div class="form-input">
                 <label for="edicion">Edicion: </label>
@@ -34,7 +41,7 @@
                         <option value="1">Primera</option>
                         <option value="2">Segunda</option>
                         <option value="3">Tercera</option>
-                        <option value="4">cuarta</option>
+                        <option value="4">Cuarta</option>
                     </select>
                 </div>
             </div>
