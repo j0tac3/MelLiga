@@ -11,11 +11,28 @@
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-    <div class="cabecera" style="background-color: #395E66;">
+    <div class="cabecera">
+        <img src="media/iconos/menu.svg" alt="Menú" class="icono-menu" id="icono-menu">
         <h2 class="titulo"><a href="index.html">MelLiga</a></h2>
-        <form class="inputs-container">
-            <input type="text" name="busqueda" class="input-busqueda" placeholder="Jugador...">
-        </form>
+        <!-- <div><a href="ingresarJugadores.html"><img class="button-addJugador" src="media/iconos/anadir.svg" alt="Nuevo Jugador"></a></div> -->
+    </div>
+    <div class="menu-lateral" id="menu-lateral">
+        <div class="menu-content">
+            <u class="menu-lista">
+                <li class="meni-lista__elemento">
+                    <a href="ingresarJugadores.html" class="elemento-enlace">
+                        <img class="icono-menu__opcion" src="media/iconos/anadir.svg" alt="Nuevo Jugador">
+                        <span>Jugador</span>
+                    </a>
+                </li>
+                <li class="meni-lista__elemento">
+                    <a href="#" class="elemento-enlace">
+                        <img class="icono-menu__opcion" src="media/iconos/anadir.svg" alt="Nuevo Jugador">
+                        <span>Equipo</span>
+                    </a>
+                </li>
+            </u>
+        </div>
     </div>
     <div class="contenedor-form">
         <form action="" id="form-jugador">
@@ -89,6 +106,7 @@
         <p>&#xa9; MelApps</p>
     </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/menu.js"></script>
     <script src="js/agregarJugador.js"></script>
 </body>
 </html>
