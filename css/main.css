@@ -4,9 +4,15 @@ html {
 *, *:before, *:after {
   margin: 0;
   padding: 0;
-	box-sizing: inherit;
+  box-sizing: inherit;;
 }
-a{
+a, a:visited, a:active{
   text-decoration: none;
   color: #fff;
+}
+li{
+  list-style: none;
+}
+ul{
+  text-decoration: none;
 }

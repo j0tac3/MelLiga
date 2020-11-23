@@ -14,13 +14,14 @@ let equipos = [];
 const btnAgregarJugador = document.getElementById('nuevo-jugador');
 const selectEquipos = document.getElementById('select-equipos');
 const formularioJugadores = document.getElementById('form-jugador');
+const addEquipos = document.getElementById('addEquipo');
 
 const getAllEquipos = async () => {
     return new Promise((resolve, reject) => {
         axios({
             method: 'GET',
-            //url: 'https://immense-mountain-28279.herokuapp.com/api/equipos',
-            url: 'http://127.0.0.1:8000/api/equipos',
+            url: 'https://immense-mountain-28279.herokuapp.com/api/equipos',
+            //url: 'http://127.0.0.1:8000/api/equipos',
         }).then(res=> {
             resolve(res.data);
         }).catch(error =>  console.error(error));
@@ -69,5 +70,20 @@ const guardarJugador = () => {
     console.log(data);
 }
 
+const agregarEquipo = (equipoSend) => {
+    axios({
+        method : 'POST',
+        url : 'https://immense-mountain-28279.herokuapp.com/api/equipos',
+        data : equipoSend
+    })
+}
+let equipoToAdd = []
+const prepararEquiposToAdd = () => {
+    for (let equipo of equipoToAdd){
+        agregarEquipo(equipo);
+    }
+}
+
 cargaInicial();
 btnAgregarJugador.addEventListener('click', guardarJugador);
+//addEquipos.addEventListener('click', prepararEquiposToAdd);

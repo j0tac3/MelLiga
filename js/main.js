@@ -39,8 +39,8 @@ const getAllEquipos = async () => {
     return new Promise((resolve, reject) => {
         axios({
             method: 'GET',
-            //url: 'https://immense-mountain-28279.herokuapp.com/api/equipos',
-            url: 'http://127.0.0.1:8000/api/equipos',
+            url: 'https://immense-mountain-28279.herokuapp.com/api/equipos',
+            //url: 'http://127.0.0.1:8000/api/equipos',
         }).then(res=> {
             resolve(res.data);
         }).catch(error =>  console.error(error));
@@ -49,12 +49,14 @@ const getAllEquipos = async () => {
 const rellenarMenuEquipos = (equipos) => {
     let fragment = document.createDocumentFragment();
     for (const equipo of equipos){
+        let elemento = document.createElement('LI');
         let escudo = document.createElement('IMG');
         let nombreEquipoNormalizado = getNombreEquipoNormalizado(equipo.id);
         escudo.src = `media/equipos/${nombreEquipoNormalizado}.png`;
         escudo.alt = equipo.nombre;
         escudo.classList.add('icono-menu-equipo');
-        fragment.appendChild(escudo);
+        elemento.appendChild(escudo);
+        fragment.appendChild(elemento);
     }
     menuEquipos.appendChild(fragment);
 }
@@ -190,7 +192,7 @@ const cargaInicial = async () => {
     cargarJugadores().then(res => cargarEquiposJugadores())
 }
 const prepararAlineacion = (e) => {
-    console.log(e.target);
+    console.log(e.target.alt);
     let nombreEquipo = e.target.alt;
     for (let equipo of equipos){
         if (equipo.nombre === nombreEquipo){
@@ -202,6 +204,11 @@ const prepararAlineacion = (e) => {
             break;
         }
     }
+    let elementsSelected = document.getElementsByClassName('icono-menu-equipo__selected');
+    if (elementsSelected.length > 0) {
+        elementsSelected[0].classList.remove('icono-menu-equipo__selected');
+    }
+    e.target.classList.add('icono-menu-equipo__selected');
 }
 
 cargaInicial();

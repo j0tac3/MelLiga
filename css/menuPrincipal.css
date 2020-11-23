@@ -1,9 +1,10 @@
 .menu-equipos{
-    margin: 0 auto;
-    padding-top: 10px;
-    width: 80%;
+    margin: 5px auto;
+    display: flex;
     align-items: center;
-    overflow-x: auto;
+    list-style: none;
+    width: 80%;
+    height: 5rem;
     overflow-y: hidden;
     white-space: nowrap;
 }
@@ -15,6 +16,23 @@
 }
 .icono-menu-equipo{
     margin: 0 0.5rem;
-    width: 4rem;
+    width: 3.8rem;
     height: 4rem;
+    padding: 0.2rem;
+    filter: grayscale(1);
+    transition: all 0.3s ease;
+}
+.icono-menu-equipo:hover{
+    transform: scale(1.2);
+    filter: grayscale(0);
+}
+.icono-menu-equipo__selected{
+    transform: scale(1.2);
+    filter: grayscale(0);
+}
+
+@media screen and (min-width: 300px) and (max-width:768px){
+    .menu-equipos{
+        width: 100%;
+    }
 }
