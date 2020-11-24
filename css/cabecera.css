@@ -5,9 +5,10 @@
     align-items: center;
     background-color: #395E66;
     padding: 10px 0 10px 0;
-    z-index: 999;
     color: #fff;
     position: relative;
+    z-index: 900;
+    transition: all 0.6s ease;
 }
 .titulo{
     /*color: #fff;*/
@@ -33,18 +34,16 @@
 }
 .menu-lateral{
     position: absolute;
-    top: 2.5rem;
-    left: -200px;
+    top: 0;
+    left: -50vw;
+    height: 100vh;
     display: flex;
-    cursor: pointer;
     background-color: #395E66; 
     z-index: 888;
     transition: all 0.5s ease;
-    border-bottom-right-radius: 5px;
 }
 .menu-lateral__selected{
     left: 0;
-    transition: all 0.5s ease;
 }
 .icono-menu{
     position: absolute;
@@ -52,25 +51,32 @@
     left: 0;
     width: 2rem;
     margin-left: 0.5rem;
-    margin-top: 0.5rem;
+    margin-top: 0.7rem;
     cursor: pointer;
+    z-index: 999;
+    transition: all 0.5s ease;
+}
+.icono-menu__selected{
+    position: fixed;
+}
+.icono-menu:hover{
+     transform: scale(1.1);
 }
 .menu-content{
-    margin: 0.5rem auto;
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     width: 100%;
 }
 .icono-menu__opcion{
-    width: 1rem;
+    width: 0.5rem;
     margin: 0 0.5rem;
 }
 .menu-lista{
     text-decoration: none;
 }
 .meni-lista__elemento{
-    margin: 0.5rem;
+    margin: 0 1rem 0.5rem;
     display: flex;
     align-items: center;
 }
@@ -78,4 +84,16 @@
     margin-right: 0.5rem;
     display: flex;
     align-items: center;
+}
+.prueba-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #395e66bd;
+    width: 0;
+    height: 100vh;
+    z-index: 900;
+}
+.prueba-menu__selected{
+    width: 100vw;
 }
