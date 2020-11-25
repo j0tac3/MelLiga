@@ -1,27 +1,38 @@
 .ver-listado{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 0.5em;
 }
+.table-container__visible{
+    width: 100%;
+    max-width: 20em;
+    visibility: visible;
+    transition: all 0.3 ease;
+}
+.table-container__oculta{
+    visibility: collapse;
+    transition: all 0.3 ease;
+}
 .btn-lista{
-    background-color: lightblue;
+    /* background-color: lightblue;
     border-radius: 5px;
     padding: 5px;
     color: #fff;
     border: none;
-    transition: all 0.5s ease;
+    transition: all 0.5s ease; */
 }
 .btn-lista:hover{
-    transform: scale(1.1);
-    cursor: pointer;
+/*     transform: scale(1.1);
+    cursor: pointer; */
 }
 .tabla-jugadores{
+    width: 100%;
     text-align: center;
 }
 .cabecera-jugadores{
-    color: midnightblue;
 }
 .fila-jugadores{
     
