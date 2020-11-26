@@ -62,7 +62,7 @@ const guardarJugador = () => {
         "nombre" : "${formularioJugadores.nombre.value}",
         "apellidos" : "${formularioJugadores.apellidos.value}",
         "apodo" : "${formularioJugadores.apodo.value}",
-        "fecha_ nacimiento" : "${formularioJugadores.nacimiento.value}",
+        "fecha_nacimiento" : "${formularioJugadores.nacimiento.value}",
         "altura" : "${formularioJugadores.altura.value}",
         "nacionalidad" : "${formularioJugadores.lugarNacimiento.value}",
         "equipo_id" : "${formularioJugadores.selectEquipos.value}"
@@ -83,7 +83,22 @@ const prepararEquiposToAdd = () => {
         agregarEquipo(equipo);
     }
 }
+const agregarJugadores = (jugador) => {
+    axios({
+        method : 'POST',
+        url : 'https://immense-mountain-28279.herokuapp.com/api/jugadores',
+        data : jugador
+    })
+}
+let jugadoresToAdd = [
+]
+const prepararJugadorAdd = () => {
+    for (let jugador of jugadoresToAdd){
+        agregarJugadores(jugador);
+    }
+}
 
 cargaInicial();
 btnAgregarJugador.addEventListener('click', guardarJugador);
 //addEquipos.addEventListener('click', prepararEquiposToAdd);
+addEquipos.addEventListener('click', prepararJugadorAdd);

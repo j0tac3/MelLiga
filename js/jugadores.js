@@ -5,11 +5,11 @@ const mostarOcultarTablaJugadores = () => {
     let isTableVisible = document.getElementsByClassName('table-container__oculta');
     if (isTableVisible.length > 0){
         tablaJugadores.classList.replace('table-container__oculta', 'table-container__visible');
-        btnLista.textContent = "Ocultar Lista de Jugadores";
+        btnLista.textContent = "Ocultar Jugadores";
     }   
     else {
         tablaJugadores.classList.replace('table-container__visible', 'table-container__oculta');
-        btnLista.textContent = "Ver Lista de Jugadores";
+        btnLista.textContent = "Mostrar Jugadores";
     }
 }
 

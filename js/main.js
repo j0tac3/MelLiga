@@ -93,8 +93,8 @@ const getAllJugadores = async () => {
     return new Promise((resolve, reject) => {
         axios({
             method : 'GET',
-            //url : 'https://immense-mountain-28279.herokuapp.com/api/jugadores'
-            url: 'http://127.0.0.1:8000/api/jugadores',
+            url : 'https://immense-mountain-28279.herokuapp.com/api/jugadores'
+            //url: 'http://127.0.0.1:8000/api/jugadores',
         }).then(res => {
             resolve(res.data);
         }).catch(error => console.log(error));
@@ -175,7 +175,7 @@ const rellenarJugadoresCampo = (jugadoresToAdd) => {
         imgCard.src = `../media/jugador_perfil/${jugador.nombre}.png`;
         imgCard.onerror = obtenerSrcImagenCampo;
         let nombreJugador = document.createElement('SPAN');
-        nombreJugador.textContent = `${jugador.nombre}`;
+        nombreJugador.textContent = `${jugador.apodo}`;
         nombreJugador.classList.add('nombre-jugador');
         jugadorCard.appendChild(imgCard);
         contenedorTarjeta.appendChild(jugadorCard);
@@ -201,6 +201,7 @@ const prepararAlineacion = (e) => {
                 jugadoresCampo.removeChild(jugadoresCampo.firstChild);
             }
             rellenarJugadoresCampo(equipo.jugadores);
+            rellenarTablaJugadores(equipo.jugadores);
             break;
         }
     }
@@ -209,6 +210,36 @@ const prepararAlineacion = (e) => {
         elementsSelected[0].classList.remove('icono-menu-equipo__selected');
     }
     e.target.classList.add('icono-menu-equipo__selected');
+}
+const rellenarTablaJugadores = (jugadores) => {
+    const tablaJugadores = document.getElementById('table-jugadores');
+    let nodos = tablaJugadores.childNodes[3].childNodes.length;
+    for (let i = 0; i < nodos; i++){
+        tablaJugadores.childNodes[3].removeChild(tablaJugadores.childNodes[3].firstChild);
+    }
+    let fragment = document.createDocumentFragment();
+    for (let jugador of jugadores) {
+        let fila = document.createElement('TR');
+        let columnNum = document.createElement('TD');
+        columnNum.textContent = `${jugador.numero}`;
+        let columnNombre = document.createElement('TD');
+        columnNombre.textContent = `${jugador.apodo}`;
+        let columnEdicion = document.createElement('TD');
+        columnEdicion.textContent = `${jugador.edicion}ª`;
+        let columnSeccion = document.createElement('TD');
+        columnSeccion.textContent = `${jugador.seccion}ª`;
+        let columnFalta = document.createElement('TD');
+        let checkJugsdor = document.createElement('INPUT');
+        checkJugsdor.type = 'checkbox';
+        columnFalta.appendChild(checkJugsdor)
+        fila.appendChild(columnNum);
+        fila.appendChild(columnNombre);
+        fila.appendChild(columnSeccion);
+        fila.appendChild(columnEdicion);
+        fila.appendChild(columnFalta);
+        fragment.appendChild(fila)
+    }
+    tablaJugadores.childNodes[3].appendChild(fragment)
 }
 
 cargaInicial();

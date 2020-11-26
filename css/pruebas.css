@@ -1,7 +1,13 @@
 
+.contenedor-jugadores-equipo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 .content{
-    width: 80%;
-    margin: 0 auto;
+    /* width: 80%; */
+    /* margin: 0 auto; */
 }
 .campo{
     background-image: url(../media/campo.jpg);
@@ -55,12 +61,12 @@
 
 @media screen and (min-width: 300px) and (max-width:768px){
     .content{
-        width: 100%;
+        /* width: 100%; */
     }
 }
 @media screen and (min-width: 768px) and (max-width:1024px){
     .content{
-        width: 80%;
+        /* width: 80%; */
     }
 }
 @media (max-width : 1024px) and (orientation : landscape){
