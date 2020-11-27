@@ -15,7 +15,7 @@
     background-size: cover;
     background-position-x: center;
     background-position-y: top;
-    margin: 0 auto;
+    margin: 0 0.5em;
     width: 20rem;
     height: 30rem;
     overflow-y: auto;

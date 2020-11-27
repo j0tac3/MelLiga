@@ -43,22 +43,24 @@
         <form class="inputs-container">
             <input type="text" name="busqueda" class="input-busqueda" placeholder="Jugador, Edicion, Posicion...">
         </form>
-        <button class="btn-lista" id="btn-lista">Mostrar Jugadores</button>
         <div class="contenedor-jugadores-equipo">
             <div class="ver-listado">
-                <div class="table-container__oculta" id="table-container">
-                    <table class="tabla-jugadores" id="table-jugadores">
-                        <thead>
-                            <tr class="cabecera-jugadores">
-                                <td>#</td>
-                                <td>Jugador</td>
-                                <td>Sección</td>
-                                <td>Edición</td>
-                                <td></td>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+                <div style="display: flex;">
+                    <div class="table-container__oculta" id="table-container">
+                        <table class="tabla-jugadores" id="table-jugadores">
+                            <thead>
+                                <tr class="cabecera-jugadores">
+                                    <td>#</td>
+                                    <td>Jugador</td>
+                                    <td>Sección</td>
+                                    <td>Edición</td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <button class="btn-lista" id="btn-lista">Mostrar Jugadores</button>
                 </div>
             </div>
             <div class="content">

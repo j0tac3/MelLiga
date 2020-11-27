@@ -11,6 +11,7 @@ const mostarOcultarTablaJugadores = () => {
         tablaJugadores.classList.replace('table-container__visible', 'table-container__oculta');
         btnLista.textContent = "Mostrar Jugadores";
     }
+    tablaJugadores.focus();
 }
 
 btnLista.addEventListener('click', mostarOcultarTablaJugadores);

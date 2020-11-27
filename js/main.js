@@ -166,21 +166,23 @@ const cargarEquiposJugadores = async () => {
 const rellenarJugadoresCampo = (jugadoresToAdd) => {
     let fragment = document.createDocumentFragment();
     for (let jugador of jugadoresToAdd){
-        let contenedorTarjeta = document.createElement('DIV');
-        contenedorTarjeta.classList.add('contenedor-tarjeta');
-        let jugadorCard = document.createElement('DIV');
-        jugadorCard.classList.add('jugador-card');
-        let imgCard = document.createElement('IMG');
-        imgCard.classList.add('img-card-jugador');
-        imgCard.src = `../media/jugador_perfil/${jugador.nombre}.png`;
-        imgCard.onerror = obtenerSrcImagenCampo;
-        let nombreJugador = document.createElement('SPAN');
-        nombreJugador.textContent = `${jugador.apodo}`;
-        nombreJugador.classList.add('nombre-jugador');
-        jugadorCard.appendChild(imgCard);
-        contenedorTarjeta.appendChild(jugadorCard);
-        contenedorTarjeta.appendChild(nombreJugador);
-        fragment.appendChild(contenedorTarjeta);
+        if (jugador.seccion === 'Base'){
+            let contenedorTarjeta = document.createElement('DIV');
+            contenedorTarjeta.classList.add('contenedor-tarjeta');
+            let jugadorCard = document.createElement('DIV');
+            jugadorCard.classList.add('jugador-card');
+            let imgCard = document.createElement('IMG');
+            imgCard.classList.add('img-card-jugador');
+            imgCard.src = `../media/jugador_perfil/${jugador.nombre}.png`;
+            imgCard.onerror = obtenerSrcImagenCampo;
+            let nombreJugador = document.createElement('SPAN');
+            nombreJugador.textContent = `${jugador.apodo}`;
+            nombreJugador.classList.add('nombre-jugador');
+            jugadorCard.appendChild(imgCard);
+            contenedorTarjeta.appendChild(jugadorCard);
+            contenedorTarjeta.appendChild(nombreJugador);
+            fragment.appendChild(contenedorTarjeta);
+        }
     }
     jugadoresCampo.appendChild(fragment);
 }
@@ -219,25 +221,27 @@ const rellenarTablaJugadores = (jugadores) => {
     }
     let fragment = document.createDocumentFragment();
     for (let jugador of jugadores) {
-        let fila = document.createElement('TR');
-        let columnNum = document.createElement('TD');
-        columnNum.textContent = `${jugador.numero}`;
-        let columnNombre = document.createElement('TD');
-        columnNombre.textContent = `${jugador.apodo}`;
-        let columnEdicion = document.createElement('TD');
-        columnEdicion.textContent = `${jugador.edicion}ª`;
-        let columnSeccion = document.createElement('TD');
-        columnSeccion.textContent = `${jugador.seccion}ª`;
-        let columnFalta = document.createElement('TD');
-        let checkJugsdor = document.createElement('INPUT');
-        checkJugsdor.type = 'checkbox';
-        columnFalta.appendChild(checkJugsdor)
-        fila.appendChild(columnNum);
-        fila.appendChild(columnNombre);
-        fila.appendChild(columnSeccion);
-        fila.appendChild(columnEdicion);
-        fila.appendChild(columnFalta);
-        fragment.appendChild(fila)
+        if (jugador.seccion == 'Base'){
+            let fila = document.createElement('TR');
+            let columnNum = document.createElement('TD');
+            columnNum.textContent = `${jugador.numero}`;
+            let columnNombre = document.createElement('TD');
+            columnNombre.textContent = `${jugador.apodo}`;
+            let columnEdicion = document.createElement('TD');
+            columnEdicion.textContent = `${jugador.edicion}ª`;
+            let columnSeccion = document.createElement('TD');
+            columnSeccion.textContent = `${jugador.seccion}`;
+            let columnFalta = document.createElement('TD');
+            let checkJugsdor = document.createElement('INPUT');
+            checkJugsdor.type = 'checkbox';
+            columnFalta.appendChild(checkJugsdor)
+            fila.appendChild(columnNum);
+            fila.appendChild(columnNombre);
+            fila.appendChild(columnSeccion);
+            fila.appendChild(columnEdicion);
+            fila.appendChild(columnFalta);
+            fragment.appendChild(fila)
+        }
     }
     tablaJugadores.childNodes[3].appendChild(fragment)
 }
